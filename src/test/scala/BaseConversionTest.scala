@@ -23,15 +23,18 @@ class BaseConversionTest extends AnyFunSuite {
       assert(BaseConversion.numDigits2(x, base) === numDigits, x)
     }
   }
+
   test("Base conversion test on intToVec function"){
-  assert(BaseConversion.intToVec(2,2) === "10")
-  assert(BaseConversion.intToVec(50,4) === "302")
+    assert(BaseConversion.intToVec(2,2) === "10")
+    assert(BaseConversion.intToVec(50,4) === "302")
     assert(BaseConversion.intToVec(500,15) === "235")
   }
+
   test("Base conversion test on vecToInt function for two examples"){
     assert(BaseConversion.vecToInt(Vector(1,1,0,1),2 ) === 13)
     assert(BaseConversion.vecToInt(Vector(4,4,4,1),5) === 621)
   }
+
   test("Convert int. to vec. then vec. to int. test") {
     val listOfNum = 1.to(1000)
     listOfNum.foreach { x =>
@@ -39,6 +42,5 @@ class BaseConversionTest extends AnyFunSuite {
       assert(BaseConversion.vecToInt(xBase15, 15) === x)
     }
   }
-
 }
 
